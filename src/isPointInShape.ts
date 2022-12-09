@@ -1,21 +1,8 @@
-interface IPoint {
-  x: number;
-  y: number;
-}
+import { ICircle, IPoint, IRect } from './type';
 
-interface IRect {
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-}
-
-interface ICircle {
-  x: number;
-  y: number;
-  radius: number;
-}
-
+/**
+ * 点是否在矩形中
+ */
 export function isPointInRect(point: IPoint, rect: IRect) {
   return (
     point.x >= rect.x &&
@@ -25,6 +12,9 @@ export function isPointInRect(point: IPoint, rect: IRect) {
   );
 }
 
+/**
+ * 点是否在圆形中
+ */
 export function isPointInCircle(point: IPoint, circle: ICircle) {
   const dx = point.x - circle.x;
   const dy = point.y - circle.y;
