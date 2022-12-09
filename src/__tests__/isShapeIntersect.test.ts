@@ -49,11 +49,27 @@ describe('两矩形是否相交（包括包含关系）', () => {
       )
     ).toBe(false);
   });
-  test('包含', () => {
+  test('包含关系', () => {
     expect(
       isRectIntersect(
         { x: 0, y: 0, width: 100, height: 100 },
         { x: 10, y: 10, width: 50, height: 50 }
+      )
+    ).toBe(true);
+  });
+  test('边界外切', () => {
+    expect(
+      isRectIntersect(
+        { x: 0, y: 0, width: 100, height: 100 },
+        { x: 100, y: 0, width: 100, height: 100 }
+      )
+    ).toBe(true);
+  });
+  test('边界内切', () => {
+    expect(
+      isRectIntersect(
+        { x: 0, y: 0, width: 100, height: 100 },
+        { x: 50, y: 20, width: 50, height: 50 }
       )
     ).toBe(true);
   });
