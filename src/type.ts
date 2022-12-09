@@ -10,6 +10,8 @@ export interface IRect {
   height: number;
 }
 
+export type IBox = IRect;
+
 export interface ICircle {
   x: number;
   y: number;
