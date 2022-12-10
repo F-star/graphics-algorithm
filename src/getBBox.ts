@@ -24,7 +24,7 @@ export function getCircleBBox(...circles: INoEmptyArray<ICircle>): IBox {
 export function getRectBBox(...rects: INoEmptyArray<IRect>): IBox {
   const first = rects[0];
   let x = first.x;
-  let y = first.x;
+  let y = first.y;
   let x2 = x + first.width;
   let y2 = y + first.height;
   for (let i = 1, len = rects.length; i < len; i++) {

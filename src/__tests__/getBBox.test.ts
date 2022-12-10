@@ -10,6 +10,7 @@ describe('圆形的包围盒', () => {
       height: 40,
     });
   });
+  // FIXME: 这个用例不好，x 和 y 相同的，具有特殊性
   test('多个圆的包围盒', () => {
     expect(
       getCircleBBox(
@@ -31,6 +32,7 @@ describe('矩形的包围盒', () => {
       getRectBBox({ x: 0, y: 0, width: 50, height: 50 })
     ).toStrictEqual<IBox>({ x: 0, y: 0, width: 50, height: 50 });
   });
+  // FIXME: 这个用例不好，x 和 y 相同的，具有特殊性
   test('多个矩形', () => {
     expect(
       getRectBBox(
