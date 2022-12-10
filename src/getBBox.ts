@@ -1,23 +1,27 @@
-import { IBox, ICircle, INoEmptyRectArray } from './type';
+import { IBox, ICircle, INoEmptyArray, IRect } from './type';
 
 /**
  * 圆形的包围盒
  */
-export function getCircleBBox(circle: ICircle): IBox {
-  const { x, y, radius } = circle;
-  const d = radius * 2;
-  return {
-    x: x - radius,
-    y: y - radius,
-    width: d,
-    height: d,
-  };
+export function getCircleBBox(...circles: INoEmptyArray<ICircle>): IBox {
+  // TODO: 优化为一次遍历
+  const rects: IRect[] = circles.map((circle) => {
+    const { x, y, radius } = circle;
+    const d = radius * 2;
+    return {
+      x: x - radius,
+      y: y - radius,
+      width: d,
+      height: d,
+    };
+  });
+  return getRectBBox(...(rects as INoEmptyArray<IRect>));
 }
 
 /**
  * 求多个矩形组成的包围盒
  */
-export function getRectBBox(...rects: INoEmptyRectArray): IBox {
+export function getRectBBox(...rects: INoEmptyArray<IRect>): IBox {
   const first = rects[0];
   let x = first.x;
   let y = first.x;

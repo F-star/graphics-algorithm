@@ -13,7 +13,7 @@ export interface IRect {
 /**
  * 数组长度必须大于等于 1 的 IRect 数组
  */
-export type INoEmptyRectArray = [IRect, ...IRect[]];
+export type INoEmptyArray<T> = [T, ...T[]];
 
 export type IBox = IRect;
 

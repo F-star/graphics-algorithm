@@ -13,3 +13,4 @@
 求图形的包围盒：
 
 1. getCircleBBox：求圆形的包围盒
+2. getRectBBox：求矩形的包围盒

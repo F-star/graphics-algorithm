@@ -2,12 +2,25 @@ import { getCircleBBox, getRectBBox } from '../getBBox';
 import { IBox } from '../type';
 
 describe('圆形的包围盒', () => {
-  test('单个圆', () => {
+  test('单个圆的包围盒', () => {
     expect(getCircleBBox({ x: 0, y: 0, radius: 20 })).toStrictEqual<IBox>({
       x: -20,
       y: -20,
       width: 40,
       height: 40,
+    });
+  });
+  test('多个圆的包围盒', () => {
+    expect(
+      getCircleBBox(
+        { x: 20, y: 20, radius: 20 },
+        { x: 100, y: 100, radius: 50 }
+      )
+    ).toStrictEqual<IBox>({
+      x: 0,
+      y: 0,
+      width: 150,
+      height: 150,
     });
   });
 });
