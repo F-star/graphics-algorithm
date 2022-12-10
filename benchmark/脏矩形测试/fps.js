@@ -5,6 +5,8 @@ const span = document.createElement('span');
 span.style.position = 'fixed';
 span.style.right = '10px';
 span.style.top = '0';
+span.style.fontSize = '32px';
+span.style.color = 'red';
 
 document.body.appendChild(span);
 
