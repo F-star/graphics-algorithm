@@ -1,5 +1,4 @@
 {
-  "files": ["index.ts"],
   "compilerOptions": {
     "target": "ES5",
     "lib": ["ESNext"],
