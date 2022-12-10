@@ -23,7 +23,7 @@ export function getRectBBox(...rects: INoEmptyRectArray): IBox {
   let y = first.x;
   let x2 = x + first.width;
   let y2 = y + first.height;
-  for (let i = 1; i < rects.length; i++) {
+  for (let i = 1, len = rects.length; i < len; i++) {
     const rect = rects[i];
     if (rect.x < x) {
       x = rect.x;
