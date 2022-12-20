@@ -9,6 +9,7 @@
 
 1. isCircleIntersect：两圆是否相交
 2. isRectIntersect：两矩形是否相交
+3. isRectContain：矩形 1 是否包含矩形 2
 
 求图形的包围盒：
 
