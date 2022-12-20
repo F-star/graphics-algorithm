@@ -21,7 +21,7 @@ export function isRectIntersect(rect1: IRect, rect2: IRect) {
     rect1.x <= rect2.x + rect2.width &&
     rect1.x + rect1.width >= rect2.x &&
     rect1.y <= rect2.y + rect2.height &&
-    rect1.height + rect1.y >= rect2.y
+    rect1.y + rect1.height >= rect2.y
   );
 }
 
@@ -30,4 +30,16 @@ export function isRectIntersect(rect1: IRect, rect2: IRect) {
  */
 export function isRectAndCircleIntersect(rect1: IRect, rect2: IRect) {
   // TODO:
+}
+
+/**
+ * 矩形 1 是否包含矩形 2
+ */
+export function isRectContain(rect1: IRect, rect2: IRect) {
+  return (
+    rect1.x <= rect2.x &&
+    rect2.y <= rect2.y &&
+    rect1.x + rect1.width >= rect2.x + rect2.width &&
+    rect1.y + rect1.height >= rect2.y + rect2.height
+  );
 }
