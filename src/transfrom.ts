@@ -8,7 +8,7 @@ interface IVector {
  * b d f
  * 0 0 1
  */
-type ITransfrom = [
+type ITransform = [
   a: number,
   b: number,
   c: number,
@@ -22,7 +22,7 @@ type ITransfrom = [
  */
 export function transform(
   { x, y }: IVector,
-  [a, b, c, d, e, f]: ITransfrom
+  [a, b, c, d, e, f]: ITransform
 ): IVector {
   return {
     x: x * a + y * c + e,
